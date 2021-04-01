@@ -18,15 +18,14 @@ namespace MassegBox
 
     public partial class NEXT : Window
     {
-        string path = @"C:\Users\user\Desktop\mes.txt";
 
-        List<People> peopleList = new List<People>();
 
 
         public NEXT()
         {
             InitializeComponent();
-
+            List<People> peopleList = new List<People>();
+            string path = @"C:\Users\user\Desktop\mes.txt";
             using (StreamReader sr = new StreamReader(path))
             {
                 for (int i = 0; i < File.ReadLines(path).Count(); i++)
