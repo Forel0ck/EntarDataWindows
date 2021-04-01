@@ -68,7 +68,7 @@ namespace MassegBox
             }
 
 
-            MessageBox.Show($"Имя {LName.Text}  Фамилия {FName.Text}  Возраст {Age.Text}");
+            MessageBox.Show($"Имя: {LName.Text}  Фамилия: {FName.Text}  Возраст: {Age.Text}");
         }
     }
 }

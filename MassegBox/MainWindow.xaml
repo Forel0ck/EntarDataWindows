@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFDF00"/>
+                <GradientStop Color="#FFFF00D3" Offset="1"/>
+                <GradientStop Color="#FFFF00D2" Offset="0.804"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -53,7 +60,9 @@
             Margin="10"
             Width="200"
             Height="50" 
-            FontSize="30" PreviewTextInput="LName_PreviewTextInput"
+            FontSize="30"
+            Opacity="0.7"
+            PreviewTextInput="LName_PreviewTextInput"
             />
         <TextBox
             x:Name="Age"
@@ -64,7 +73,9 @@
             Margin="10"
             Width="200"
             Height="50"
-            FontSize="30" PreviewTextInput="Age_PreviewTextInput"
+            Opacity="0.7"
+            FontSize="30" 
+            PreviewTextInput="Age_PreviewTextInput"
             />
         <TextBox
             x:Name="FName"
@@ -76,6 +87,7 @@
             Width="200"
             Height="50"
             FontSize="30"
+            Opacity="0.7"
             PreviewTextInput="FName_PreviewTextInput"
             />
         <Button
