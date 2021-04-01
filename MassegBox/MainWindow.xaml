@@ -31,6 +31,7 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="30"
+            Foreground="White"
             Margin="10" 
             />
         <TextBlock
@@ -40,7 +41,8 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="30"
-            Margin="10" 
+            Margin="10"
+            Foreground="White"
             />
         <TextBlock
             Text="Введите Возраст:"
@@ -49,10 +51,11 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Center"
             FontSize="30"
-            Margin="10" 
+            Margin="10"
+            Foreground="White"
             />
         <TextBox
-            x:Name="LName"
+            x:Name="txtLName"
             Grid.Column="1"
             Grid.Row="1"
             HorizontalAlignment="Left"
@@ -62,10 +65,10 @@
             Height="50" 
             FontSize="30"
             Opacity="0.7"
-            PreviewTextInput="LName_PreviewTextInput"
+            PreviewTextInput="txtLName_PreviewTextInput"
             />
         <TextBox
-            x:Name="Age"
+            x:Name="txtAge"
             Grid.Column="1"
             Grid.Row="2"
             HorizontalAlignment="Left"
@@ -75,10 +78,10 @@
             Height="50"
             Opacity="0.7"
             FontSize="30" 
-            PreviewTextInput="Age_PreviewTextInput"
+            PreviewTextInput="txtAge_PreviewTextInput"
             />
         <TextBox
-            x:Name="FName"
+            x:Name="txtFName"
             Grid.Column="1"
             Grid.Row="0"
             HorizontalAlignment="Left"
@@ -88,19 +91,35 @@
             Height="50"
             FontSize="30"
             Opacity="0.7"
-            PreviewTextInput="FName_PreviewTextInput"
+
+            PreviewTextInput="txtFName_PreviewTextInput"
             />
         <Button
             x:Name="btEntry"
             Content="Вход"
             Grid.Row="4"
-            Grid.ColumnSpan="2"
-            HorizontalAlignment="Center"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
             FontSize="30"
-            Margin="100 10"
-            Width="150" 
+            Margin="10 10"
+            Width="150"
+            Foreground="White"
             BorderBrush="{x:Null}" 
-            Background="{x:Null}" Click="btEntry_Click" 
+            Background="{x:Null}"
+            Click="btEntry_Click" 
+            />
+        <Button
+            x:Name="btView"
+            Content="Просмотр пользователей"
+            Grid.Row="4"
+            Grid.Column="0"
+            HorizontalAlignment="Right"
+            FontSize="30"
+            Foreground="White"
+            Margin="10 10"
+            Width="370" 
+            BorderBrush="{x:Null}" 
+            Background="{x:Null}" Click="btView_Click"
             />
     </Grid>
 </Window>

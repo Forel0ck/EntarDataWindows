@@ -16,19 +16,21 @@ using System.Windows.Shapes;
 
 namespace MassegBox
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
+        string path = @"C:\Users\user\Desktop\mes.txt";
+        List<People> peopleList = new List<People>();
+
         public MainWindow()
         {
             InitializeComponent();
 
+
         }
 
 
-        private void Age_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void txtAge_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int val;
             if (!int.TryParse(e.Text, out val))
@@ -37,7 +39,7 @@ namespace MassegBox
             }
         }
 
-        private void FName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void txtFName_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int val;
             if (int.TryParse(e.Text, out val))
@@ -46,7 +48,7 @@ namespace MassegBox
             }
         }
 
-        private void LName_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void txtLName_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int val;
             if (int.TryParse(e.Text, out val))
@@ -57,18 +59,30 @@ namespace MassegBox
 
         private void btEntry_Click(object sender, RoutedEventArgs e)
         {
-            string path = @"C:\Users\user\Desktop\mes.txt";
 
             using (StreamWriter sw = new StreamWriter(path, true))
             {
-                sw.Write(FName.Text);
-                sw.Write(LName.Text);
-                sw.Write(Age.Text);
+                sw.Write(txtFName.Text);
+                sw.Write(";");
+                sw.Write(txtLName.Text);
+                sw.Write(";");
+                sw.Write(txtAge.Text);
+                sw.Write(";");
                 sw.Close();
             }
 
 
-            MessageBox.Show($"Имя: {LName.Text}  Фамилия: {FName.Text}  Возраст: {Age.Text}");
+            MessageBox.Show($"Имя: {txtLName.Text}  Фамилия: {txtFName.Text}  Возраст: {txtAge.Text}");
+
+        }
+
+        private void btView_Click(object sender, RoutedEventArgs e)
+        {
+
+            this.Hide();
+            NEXT next = new NEXT();
+            next.ShowDialog();
+            this.Show();
         }
     }
 }
